@@ -1,7 +1,7 @@
-import SignIn from '@/component/Signin'
+import SignIn from '@/component/auth/Signin'
 
 export default function SignInPage(){
     return (
-        <div>SignIn</div>
+        <div><SignIn/></div>
     )
 }
