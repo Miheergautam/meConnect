@@ -1,20 +1,30 @@
 "use client";
-import { useState } from 'react';
-import TextInput from './InputBox';
+import { useState } from "react";
+import TextInput from "./InputBox";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Signin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Signing in as ${email}`);
+    const res = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (res?.ok) router.push("/");
+    else alert("Invalid credentials");
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-        <h1 className='text-5xl font-bold text-center mb-10'>SignIn</h1>
-        <TextInput
+      <h1 className="text-5xl font-bold text-center mb-10">SignIn</h1>
+      <TextInput
         type="email"
         placeholder="Email"
         value={email}

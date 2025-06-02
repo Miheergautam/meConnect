@@ -3,23 +3,27 @@
 import { useState } from "react";
 import TextInput from "./InputBox";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/signup",
-        {
-          email,
-          password,
-        }
-      );
-
+      const response = await axios.post("http://localhost:3000/api/signup", {
+        email,
+        password,
+      });
       console.log(response.data);
+
+      if (response) {
+        router.push("/signin");
+      } else {
+        alert("Signup failed");
+      }
     } catch (error) {
       console.error("Signup failed:", error);
     }
