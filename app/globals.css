@@ -1,1 +1,119 @@
 @import "tailwindcss";
+
+/* Custom color variables with simple names */
+:root {
+  --black: #040404;
+  --gray: #303030;
+  --yellow: #f4ffac;
+  --white: #ffffff;
+}
+
+/* Optional: Global styles */
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: system-ui, sans-serif;
+}
+
+/* Background color utilities */
+.bg-black {
+  background-color: var(--black);
+}
+.bg-gray {
+  background-color: var(--gray);
+}
+.bg-yellow {
+  background-color: var(--yellow);
+}
+.bg-white {
+  background-color: var(--white);
+}
+
+/* Text color utilities */
+.text-black {
+  color: var(--black);
+}
+.text-gray {
+  color: var(--gray);
+}
+.text-yellow {
+  color: var(--yellow);
+}
+.text-white {
+  color: var(--white);
+}
+
+/* Border and Ring Utilities */
+.border {
+  border: 1px solid var(--gray);
+}
+.border-yellow {
+  border-color: var(--yellow);
+}
+.border-black {
+  border-color: var(--black);
+}
+.border-gray {
+  border-color: var(--gray);
+}
+
+.ring {
+  box-shadow: 0 0 0 2px var(--yellow);
+}
+.ring-yellow {
+  box-shadow: 0 0 0 2px var(--yellow);
+}
+.ring-black {
+  box-shadow: 0 0 0 2px var(--black);
+}
+
+/* Rounded corners */
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+/* Transitions for smoother interactions */
+.transition {
+  transition: all 0.3s ease;
+}
+.hover-scale-up {
+  transition: transform 0.3s ease;
+}
+.hover-scale-up:hover {
+  transform: scale(1.05);
+}
+.active-scale-down:active {
+  transform: scale(0.95);
+}
+
+/* Hover utilities for links and buttons */
+.hover-underline:hover {
+  text-decoration: underline;
+}
+.hover-bg-gray:hover {
+  background-color: var(--gray);
+}
+.hover-bg-yellow:hover {
+  background-color: var(--yellow);
+}
+.hover-bg-yellow-dark:hover {
+  background-color: #e6f07e; /* Slightly darker yellow for hover */
+}
+
+/* Focus outlines for accessibility */
+.focus-ring {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
