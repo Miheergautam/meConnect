@@ -17,7 +17,7 @@ export default function InputBox({
       <input
         type={type}
         {...rest}
-        className="w-full px-4 py-2 rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+        className="w-full px-4 py-2 text-yellow font-medium rounded-md border border-ye shadow-sm focus:outline-none focus:ring-1 transition duration-200"
       />
     </div>
   );
